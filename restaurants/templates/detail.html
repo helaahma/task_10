@@ -16,17 +16,21 @@
     <p class="card-text">{{restaurant.description|linebreaks}}</p>
     <p class="card-text">Opening Time: {{restaurant.opening_time}}</p>
     <p class="card-text">Closing Time: {{restaurant.closing_time}}</p>
-        {% for items in item%}
+   
+        </div>
+    <div class="col-md-r">
+   {% for items in item%}
           <ul class="list-group list-group-flush">
             <li class="list-group-item text-center">
-               
+               <p>Name:</p>
                 {{items.name}}
+                <p> Price: </p>
                 {{items.price}}
-             
+                <p> description: </p>
+                {{items.description}}
             </li>
           </ul>
-             {% endfor %}
-        </div>
+    {% endfor %}
     <div class="row text-center">
         <div class="col-md-6">
             <a href="{% url 'restaurant-update' restaurant.id %}" class="btn btn-outline-primary btn-block">Update</a>
@@ -34,12 +38,18 @@
         <div class="col-md-6">
             <a href="{% url 'restaurant-delete' restaurant.id %}" class="btn btn-outline-danger btn-block">Delete</a>
         </div>
-        <div class="col-md-6">
+    
+ <div class="col-md-6">
             <a href="{% url 'item-create' restaurant.id %}" class="btn btn-outline-primary btn-block">Update Item</a>
-        </div>
+</div>
+
 
         
     </div>
   </div>
 </div>
+
+</div>
+
+
 {% endblock content %}
